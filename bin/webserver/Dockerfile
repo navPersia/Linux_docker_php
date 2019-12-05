@@ -1,4 +1,4 @@
-FROM php:7.1.20-apache
+FROM php:7.2-apache
 
 ## Other PHP7 Extensions
 #
