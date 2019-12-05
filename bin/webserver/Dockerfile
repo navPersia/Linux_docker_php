@@ -8,7 +8,7 @@ FROM php:7.2-apache
 #RUN apt-get -y install libsqlite3-dev libsqlite3-0 mysql-client
 #RUN docker-php-ext-install pdo_mysql
 #RUN docker-php-ext-install pdo_sqlite
-#RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install mysqli
 #
 #RUN docker-php-ext-install curl
 #RUN docker-php-ext-install tokenizer
