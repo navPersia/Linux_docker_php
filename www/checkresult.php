@@ -48,7 +48,7 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "div class=\"media msg \">
+                    echo "<div class=\"media msg \">
             <a class=\"pull-left\" href=\"#\">
                 <img class=\"media-object\" data-src=\"holder.js/64x64\" alt=\"64x64\" style=\"width: 32px; height: 32px;\" src=\"/assets/text-icon.png\">
             </a>
@@ -66,7 +66,7 @@
         /* close connection */
         mysqli_close($link);
         ?>
-        
+
 <!--        <div class="media msg ">-->
 <!--            <a class="pull-left" href="#">-->
 <!--                <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="/assets/text-icon.png">-->
