@@ -41,7 +41,6 @@ if (mysqli_connect_errno()) {
     if(mysqli_num_rows(mysqli_query($link,"SHOW TABLES LIKE 'MyGuests'"))) {
         mysqli_query($link, "DROP TABLE MyGuests");
     }
-    mysqli_query($link, "DROP TABLE MyGuests");
     $sql = "CREATE TABLE MyGuests (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
