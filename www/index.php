@@ -32,18 +32,20 @@
     </nav>
     <!-- Page Content -->
     <div class="container">
-        <form id="myForm" action="/insert.php" method="post">
-            <div class="form-group" data-validate = "Valid email is required: ex@abc.xyz">
-                <input class="form-control" type="text" name="name" placeholder="Name">
-            </div>
+        <div class="mt-3">
+            <form id="myForm" action="/insert.php" method="post">
+                <div class="form-group" data-validate = "Valid email is required: ex@abc.xyz">
+                    <input class="form-control" type="text" name="name" placeholder="Name">
+                </div>
 
-            <div class="form-group" data-validate = "Message is required">
-                <textarea class="form-control" name="body" placeholder="Message" rows="3"></textarea>
-                <span class="shadow-input1"></span>
-            </div>
+                <div class="form-group" data-validate = "Message is required">
+                    <textarea class="form-control" name="body" placeholder="Message" rows="3"></textarea>
+                    <span class="shadow-input1"></span>
+                </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
     <!-- /.container -->
     </body>

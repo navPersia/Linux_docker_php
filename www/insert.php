@@ -8,6 +8,17 @@ if (mysqli_connect_errno()) {
     if (empty($name = $_POST["name"]) || empty($body = $_POST["body"])) {
         echo "cant send data!";
     }else {
+
+        // sql to create table
+        $sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+body VARCHAR(30) NOT NULL
+)";
+        if ($link->query($sql) === TRUE) {
+            echo "Table MyGuests created successfully";
+        }
+        
         $name = $_POST["name"];
         $body = $_POST["body"];
 
