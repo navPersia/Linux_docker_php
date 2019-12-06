@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     if (empty($name = $_POST["name"]) || empty($body = $_POST["body"])) {
         echo "cant send data!";
     }else {
-        $name = $_POST["email"];
+        $name = $_POST["name"];
         $body = $_POST["body"];
 
         $rowSQL = mysqli_query($link, "SELECT MAX( ID ) AS max FROM `MyGuests`;");
@@ -20,7 +20,7 @@ if (mysqli_connect_errno()) {
 
         mysqli_query($link, $sql);
         /* Redirect browser */
-        header("Location: http://www.yourwebsite.com/user.php");
+        header("Location: /insert.php");
         exit();
     }
 }
