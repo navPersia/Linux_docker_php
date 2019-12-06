@@ -45,7 +45,7 @@
                     <span class="shadow-input1"></span>
                 </div>
 
-                <input class="contact1-form-btn" type="button" id="save" value="send"></input>
+                <input class="contact1-form-btn" onclick="send()" type="button" id="save" value="send"></input>
             </form>
             <span id="result">click on send to send you message!</span>
         </div>
@@ -53,7 +53,7 @@
     <!-- /.container -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-            $("#save").click(function () {
+            function send() {
                 $.ajax({
                     url: "127.0.0.1/insert.php",
                     type: "post",
