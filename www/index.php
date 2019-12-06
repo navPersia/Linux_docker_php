@@ -30,25 +30,20 @@
             </div>
         </div>
     </nav>
-
     <!-- Page Content -->
     <div class="container">
-        <div class="container-contact1">
-            <form id="myForm" class="contact1-form validate-form" action="/insert.php" method="post">
-                <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input1" type="text" name="name" placeholder="Name">
-                    <span class="shadow-input1"></span>
-                </div>
+        <form id="myForm" action="/insert.php" method="post">
+            <div class="form-group" data-validate = "Valid email is required: ex@abc.xyz">
+                <input class="form-control" type="text" name="name" placeholder="Name">
+            </div>
 
-                <div class="wrap-input1 validate-input" data-validate = "Message is required">
-                    <textarea class="input1" name="body" placeholder="Message"></textarea>
-                    <span class="shadow-input1"></span>
-                </div>
+            <div class="form-group" data-validate = "Message is required">
+                <textarea class="form-control" name="body" placeholder="Message" rows="3"></textarea>
+                <span class="shadow-input1"></span>
+            </div>
 
-                <button class="contact1-form-btn" type="submit" id="save" value="send"></button>
-            </form>
-            <span id="result">click on send to send you message!</span>
-        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     <!-- /.container -->
     </body>
