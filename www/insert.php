@@ -5,7 +5,7 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     printf("MySQL connecttion failed: %s", mysqli_connect_error());
 } else {
-    if (empty($name = $_POST["email"]) || empty($body = $_POST["body"])) {
+    if (empty($name = $_POST["name"]) || empty($body = $_POST["body"])) {
         echo "cant send data!";
     }else {
         $name = $_POST["email"];
