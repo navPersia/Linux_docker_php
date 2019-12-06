@@ -11,7 +11,7 @@
     </head>
     <body>
     <?php
-    $link = mysqli_connect("mysql", "root", "navid7373", null);
+    $link = mysqli_connect("mysql", "root", "tiger", "png");
 
     /* check connection */
     if (mysqli_connect_errno()) {
