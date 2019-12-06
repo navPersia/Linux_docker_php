@@ -1,0 +1,29 @@
+.message-wrap
+{
+    box-shadow: 0 0 3px #ddd;
+    padding:0;
+
+}
+.msg
+{
+    padding:5px;
+    /*border-bottom:1px solid #ddd;*/
+    margin:0;
+}
+.msg-wrap
+{
+    padding:10px;
+    height: 90vh;
+    overflow: auto;
+
+}
+.highlight
+{
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+}
+.msg-wrap .media-heading
+{
+    color:#003bb3;
+    font-weight: 700;
+}

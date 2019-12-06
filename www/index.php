@@ -23,9 +23,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php">Give data to mysql</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="creattable.php">Create table</a>
-                    </li>
                 </ul>
             </div>
         </div>
