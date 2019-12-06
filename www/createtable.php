@@ -20,7 +20,10 @@
                     <a class="nav-link" href="checkresult.php">Check result</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.php">Give data to mysql</a>
+                    <a class="nav-link" href="index.php">Give data to mysql</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="createtable.php.php">Create table</a>
                 </li>
             </ul>
         </div>
