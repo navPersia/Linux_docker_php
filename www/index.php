@@ -3,63 +3,51 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LAMP STACK</title>
+        <title>Give data</title>
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
     <body>
-        <section class="hero is-medium is-info is-bold">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title">
-                        LAMP STACK
-                    </h1>
-                    <h2 class="subtitle">
-                        Your local development environment
-                    </h2>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column">
-                        <h3 class="title is-3 has-text-centered">Environment</h3>
-                        <hr>
-                        <div class="content">
-                            <ul>
-                                <li><?= apache_get_version(); ?></li>
-                                <li>PHP <?= phpversion(); ?></li>
-                                <li>
-                                    <?php
-                                    $link = mysqli_connect("mysql", "root", "tiger", null);
+    <?php
+    $link = mysqli_connect("mysql", "root", "navid7373", "php");
 
-/* check connection */
-                                    if (mysqli_connect_errno()) {
-                                        printf("MySQL connecttion failed: %s", mysqli_connect_error());
-                                    } else {
-                                        /* print server version */
-                                        printf("MySQL Server %s", mysqli_get_server_info($link));
-                                    }
-                                    /* close connection */
-                                    mysqli_close($link);
-                                    ?>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <h3 class="title is-3 has-text-centered">Quick Links</h3>
-                        <hr>
-                        <div class="content">
-                            <ul>
-                                <li><a href="http://localhost/phpinfo.php">phpinfo()</a></li>
-                                <li><a href="http://localhost:8080">phpMyAdmin</a></li>
-                                <li><a href="http://localhost/test_db.php">Test DB Connection</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    /* check connection */
+    if (mysqli_connect_errno()) {
+        printf("MySQL connecttion failed: %s", mysqli_connect_error());
+    } else {
+        /* print server version */
+        printf("MySQL Server %s", mysqli_get_server_info($link));
+    }
+    /* close connection */
+    mysqli_close($link);
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkresult.php">Check result</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Give data to mysql</a>
+                    </li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
+        <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML or with CSS. For best results, use an SVG image as your logo.</p>
+    </div>
+    <!-- /.container -->
     </body>
 </html>
