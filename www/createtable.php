@@ -44,7 +44,7 @@ if (mysqli_connect_errno()) {
     $sql = "CREATE TABLE MyGuests (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    body VARCHAR(MAX) NOT NULL
+    body VARCHAR(4000) NOT NULL
     )";
     if ($link->query($sql) === TRUE) {
         echo "<div class=\"alert alert-success mt-3\" role=\"alert\">
