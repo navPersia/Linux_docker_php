@@ -38,6 +38,11 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     echo '<div class="alert alert-danger" role="alert">' . "MySQL connecttion failed: " . mysqli_connect_error() . "</div>";
 } else {
+    $val = mysql_query('select 1 from `MyGuests` LIMIT 1');
+    if($val === FALSE)
+    {
+        mysqli_query($link, "DROP TABLE MyGuests");
+    }
     mysqli_query($link, "DROP TABLE MyGuests");
     $sql = "CREATE TABLE MyGuests (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
