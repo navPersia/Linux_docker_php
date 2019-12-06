@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Give data</title>
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
+        <link rel="stylesheet" href="/assets/bootstrap.bundle.min.js">
+        <link rel="stylesheet" href="/assets/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/jquery.slim.min.js">
     </head>
     <body>
     <?php

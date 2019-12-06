@@ -12,7 +12,7 @@ sudo docker stop navid-phpmyadmin
 
 docker system prune
 
-docker system prune -a
+docker system prune -a -y
 
 git pull
 docker-compose up -d
