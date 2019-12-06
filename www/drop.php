@@ -23,10 +23,10 @@
                     <a class="nav-link" href="index.php">Give data to mysql</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="createtable.php">Create table</a>
+                    <a class="nav-link " href="createtable.php">Create table</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="drop.php">Drop</a>
+                    <a class="nav-link active" href="drop.php">Drop</a>
                 </li>
             </ul>
         </div>
@@ -41,20 +41,7 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     echo '<div class="alert alert-danger mt-3" role="alert">' . "MySQL connecttion failed: " . mysqli_connect_error() . "</div>";
 } else {
-    $sql = "CREATE TABLE MyGuests (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    body VARCHAR(MAX) NOT NULL
-    )";
-    if ($link->query($sql) === TRUE) {
-        echo "<div class=\"alert alert-success mt-3\" role=\"alert\">
-  Table MyGuests created successfully!
-</div>";
-    }else{
-        echo '<div class="alert alert-danger mt-3" role="alert">
-  Table MyGuests is not created!
-</div>';
-    }
+    mysqli_query($link, "DROP TABLE MyGuests");
 }
 ?>
 </div>
