@@ -35,10 +35,11 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     echo '<div class="alert alert-danger" role="alert">' . "MySQL connecttion failed: " . mysqli_connect_error() . "</div>";
 } else {
-    $sql = "CREATE TABLE MyGuests (
+    $sql = "DROP TABLE MyGuests;
+CREATE TABLE MyGuests (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    body VARCHAR(30) NOT NULL
+    body VARCHAR(900) NOT NULL
     )";
     if ($link->query($sql) === TRUE) {
         echo "<div class=\"alert alert-success\" role=\"alert\">
