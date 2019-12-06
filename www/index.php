@@ -34,7 +34,7 @@
     <!-- Page Content -->
     <div class="container">
         <div class="container-contact1">
-            <form id="myForm" class="contact1-form validate-form">
+            <form id="myForm" class="contact1-form validate-form" action="/insert.php" method="post">
                 <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <input class="input1" type="text" name="name" placeholder="Name">
                     <span class="shadow-input1"></span>
@@ -45,40 +45,11 @@
                     <span class="shadow-input1"></span>
                 </div>
 
-                <input class="contact1-form-btn" onclick="send()" type="button" id="save" value="send"></input>
+                <button class="contact1-form-btn" type="submit" id="save" value="send"></button>
             </form>
             <span id="result">click on send to send you message!</span>
         </div>
     </div>
     <!-- /.container -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#save").click(function () {
-                $.ajax({
-                    url: "http://192.168.0.156/insert.php",
-                    type: "post",
-                    data: $("#myForm").serialize(),
-
-                });
-                document.getElementById('result').innerHTML = "sending your messsage!";
-                $('#result').css({
-                    'color': 'green'
-                });
-                $('.contact1-form-btn').css({
-                    'background': '#333333'
-                });
-                setTimeout(function () {
-                    document.getElementById('result').innerHTML = "click on send to send you message!";
-                    $('#result').css({
-                        'color': 'red'
-                    });
-                    $('.contact1-form-btn').css({
-                        'background': '#57b846'
-                    });
-                }, 5000);
-            });
-        });
-    </script>
     </body>
 </html>
