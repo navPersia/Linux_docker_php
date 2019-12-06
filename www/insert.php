@@ -16,11 +16,11 @@ if (mysqli_connect_errno()) {
         $largestNumber = $row['max'];
         $largestNumber = (int)$largestNumber + 1;
 
-        $sql = "INSERT INTO msg (id , email, body) VALUES ($largestNumber,'$name','$body')";
+        $sql = "INSERT INTO MyGuests (id , email, body) VALUES ($largestNumber,'$name','$body')";
 
         mysqli_query($link, $sql);
         /* Redirect browser */
-        header("Location: /insert.php");
+        header("Location: /index.php");
         exit();
     }
 }
