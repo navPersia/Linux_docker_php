@@ -8,8 +8,6 @@ if (mysqli_connect_errno()) {
     if (empty($name = $_POST["name"]) || empty($body = $_POST["body"])) {
         echo "cant send data!";
     }else {
-        // sql to create table
-
         $name = $_POST["name"];
         $body = $_POST["body"];
 
@@ -18,7 +16,7 @@ if (mysqli_connect_errno()) {
         $largestNumber = $row['max'];
         $largestNumber = (int)$largestNumber + 1;
 
-        $sql = "INSERT INTO MyGuests (id , name, body) VALUES ($largestNumber,$name,$body)";
+        $sql = "INSERT INTO MyGuests (id , name, body) VALUES ($largestNumber,'$name','$body')";
 
         mysqli_query($link, $sql);
         /* Redirect browser */
