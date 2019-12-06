@@ -25,9 +25,6 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="createtable.php">Create table</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="drop.php">Drop</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -41,6 +38,9 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     echo '<div class="alert alert-danger mt-3" role="alert">' . "MySQL connecttion failed: " . mysqli_connect_error() . "</div>";
 } else {
+    if(mysqli_num_rows(mysqli_query($link,"SHOW TABLES LIKE 'MyGuests'"))) {
+        mysqli_query($link, "DROP TABLE MyGuests");
+    }
     $sql = "CREATE TABLE MyGuests (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
