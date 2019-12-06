@@ -4,25 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Give data</title>
-        <link rel="stylesheet" href="/assets/css/bulma.min.css">
+        <link rel="stylesheet" href="/assets/css/index.css">
         <link rel="stylesheet" href="/assets/bootstrap.bundle.min.js">
         <link rel="stylesheet" href="/assets/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/jquery.slim.min.js">
     </head>
     <body>
-    <?php
-    $link = mysqli_connect("mysql", "root", "tiger", "png");
-
-    /* check connection */
-    if (mysqli_connect_errno()) {
-        printf("MySQL connecttion failed: %s", mysqli_connect_error());
-    } else {
-        /* print server version */
-        printf("MySQL Server %s", mysqli_get_server_info($link));
-    }
-    /* close connection */
-    mysqli_close($link);
-    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,16 +17,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="checkresult.php">Check result</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Give data to mysql</a>
+                        <a class="nav-link active" href="index.php">Give data to mysql</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="creattable.php">Create table</a>
                     </li>
                 </ul>
             </div>
@@ -48,9 +33,41 @@
 
     <!-- Page Content -->
     <div class="container">
-        <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
-        <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML or with CSS. For best results, use an SVG image as your logo.</p>
+        <div class="container-contact1">
+            <form id="myForm" class="contact1-form validate-form">
+                <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <input class="input1" type="text" name="name" placeholder="Name">
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="wrap-input1 validate-input" data-validate = "Message is required">
+                    <textarea class="input1" name="body" placeholder="Message"></textarea>
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <input class="contact1-form-btn" type="button" id="save" value="send"></input>
+            </form>
+            <span id="result">click on send to send you message!</span>
+        </div>
     </div>
     <!-- /.container -->
+    <script>
+        $(document).ready(function () {
+            $("#save").click(function () {
+                $.ajax({
+                    url: "127.0.0.1/insert.php",
+                    type: "post",
+                    data: $("#myForm").serialize(),
+
+                });
+                document.getElementById('result').innerHTML = "sending your messsage!";
+                $('#result').css({
+                    'color': 'green'
+                });
+                $('.contact1-form-btn').css({
+                    'background': '#333333'
+                });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </body>
 </html>
