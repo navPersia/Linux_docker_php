@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
         $largestNumber = $row['max'];
         $largestNumber = (int)$largestNumber + 1;
 
-        $sql = "INSERT INTO MyGuests (id , name, body) VALUES ($largestNumber,'$name','$body')";
+        $sql = "INSERT INTO MyGuests (id , name, body) VALUES ($largestNumber,$name,$body)";
 
         mysqli_query($link, $sql);
         /* Redirect browser */
