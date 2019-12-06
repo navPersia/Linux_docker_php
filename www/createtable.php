@@ -38,9 +38,7 @@ $link = mysqli_connect("mysql", "root", "tiger", "png");
 if (mysqli_connect_errno()) {
     echo '<div class="alert alert-danger" role="alert">' . "MySQL connecttion failed: " . mysqli_connect_error() . "</div>";
 } else {
-    $val = mysqli_query($link, 'select 1 from `MyGuests` LIMIT 1');
-    if($val === FALSE)
-    {
+    if(mysqli_num_rows(mysqli_query($link,"SHOW TABLES LIKE 'MyGuests'"))) {
         mysqli_query($link, "DROP TABLE MyGuests");
     }
     mysqli_query($link, "DROP TABLE MyGuests");
