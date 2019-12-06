@@ -10,12 +10,13 @@ sudo docker stop navid-webserver
 sudo docker stop navid-mysql
 sudo docker stop navid-phpmyadmin
 
-docker system prune -y
+docker system prune 
 
-docker system prune -a -y
+docker system prune -a 
 
 git pull https://navpersia:Killerfrost1994@github.com/navPersia/linux_docker_php.git
 docker-compose up -d
+
 ```
 
 <P>Made by Navid RADKUSHA - 2019</P>

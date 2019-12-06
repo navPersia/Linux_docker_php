@@ -25,10 +25,10 @@ services:
       - ./data/mysql:/var/lib/mysql
       - ./logs/mysql:/var/log/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: png
-      MYSQL_USER: png
-      MYSQL_PASSWORD: png
+      MYSQL_ROOT_PASSWORD: navid7373
+      MYSQL_DATABASE: php
+      MYSQL_USER: php
+      MYSQL_PASSWORD: php
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'navid-phpmyadmin'
