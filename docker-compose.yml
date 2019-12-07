@@ -44,6 +44,7 @@ services:
       - /sessions
   portainer:
     image: portainer/portainer
+    container_name: 'navid-management'
     command: -H unix:///var/run/docker.sock
     restart: 'always'
     ports:
