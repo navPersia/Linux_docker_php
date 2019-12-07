@@ -26,9 +26,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="createtable.php">Create table</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://192.168.5.1:9000" target="_blank">Portainer</a>
-                </li>
             </ul>
         </div>
     </div>
