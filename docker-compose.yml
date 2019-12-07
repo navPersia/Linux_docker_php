@@ -32,6 +32,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'navid-phpmyadmin'
+    restart: 'always'
     links:
       - mysql
     environment:
